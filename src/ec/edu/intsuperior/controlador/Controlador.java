@@ -17,15 +17,25 @@ public class Controlador {
     JpIngresarCurso ingresarCurso=new JpIngresarCurso(this);
     JpIngresarDocente ingresarDocente=new JpIngresarDocente(this);
     JpIngresarEstudiante ingresarEstudiante=new JpIngresarEstudiante(this);
+    Notas notas=new Notas(this);
     
     
     public void probarConexion(){
         Conexion.getConnection("proyecto_poo","root", "1005166200");
     }
     
+    public void mostrarNotas(){
+        notas.setSize(1000,1000);
+    estudiante.esc.removeAll();
+    estudiante.esc.add(notas);
+   notas.setVisible(true);
+    estudiante.esc.validate();
+    notas.repaint();   
+        
+    }
     
     public void mostraringEstudiante(){
-     ingresarEstudiante.setSize(1000,1000);
+     ingresarEstudiante.setSize(600,600);
     administrador.Escritorio.removeAll();
     administrador.Escritorio.add(ingresarEstudiante);
     ingresarEstudiante.setVisible(true);
@@ -64,20 +74,23 @@ public class Controlador {
     }
     public void mostrarDocente(){
         
-        docente.setExtendedState(Docente.MAXIMIZED_BOTH);
+        docente.setSize(1100,600);
+//        docente.setExtendedState(Docente.MAXIMIZED_BOTH);
         docente.setVisible(true);
         loggin.setVisible(false);
     }
     
     public void mostrarAdministrador(){
         //administrador.setExtendedState(Administrador.MAXIMIZED_BOTH);
+        
         administrador.setVisible(true);
         loggin.setVisible(false);
       
     }
     
     public void mostrarEstudiante(){
-        administrador.setExtendedState(Estudiante.MAXIMIZED_BOTH);
+        estudiante.setSize(1000,1000);
+//        administrador.setExtendedState(Estudiante.MAXIMIZED_BOTH);
         estudiante.setVisible(true);
         loggin.setVisible(false);
     }
