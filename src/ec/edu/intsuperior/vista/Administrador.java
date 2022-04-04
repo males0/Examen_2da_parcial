@@ -14,8 +14,7 @@ import javax.swing.*;
  */
 public class Administrador extends JFrame {
 
-    Controlador controlador; //estoy creando una instancia (objeto) de la clase Controlador
-    //Constructor
+    Controlador controlador; 
     public Administrador(Controlador controlador) {
         initComponents();
         this.controlador=controlador;
@@ -30,23 +29,24 @@ public class Administrador extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Escritorio = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        Ingmateria = new javax.swing.JMenuItem();
+        ediMateria = new javax.swing.JMenuItem();
+        eliminarMateria = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        ingCurso = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        mstrrDocente = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
-        jMenuItem10 = new javax.swing.JMenuItem();
+        estu = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
@@ -57,12 +57,28 @@ public class Administrador extends JFrame {
         jMenuItem16 = new javax.swing.JMenuItem();
         jMenuItem17 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("MingLiU-ExtB", 1, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText(" ADMINISTRADOR");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/admini.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
+        Escritorio.setLayout(EscritorioLayout);
+        EscritorioLayout.setHorizontalGroup(
+            EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EscritorioLayout.createSequentialGroup()
+                .addContainerGap(189, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(148, 148, 148))
+        );
+        EscritorioLayout.setVerticalGroup(
+            EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EscritorioLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(104, Short.MAX_VALUE))
+        );
 
         jMenu1.setText("INICIO");
         jMenu1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -75,32 +91,42 @@ public class Administrador extends JFrame {
         jMenu2.setText("MATERIA");
         jMenu2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jMenuItem2.setText("INGRESAR");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        Ingmateria.setText("INGRESAR");
+        Ingmateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                IngmateriaActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        jMenu2.add(Ingmateria);
 
-        jMenuItem3.setText("EDITA");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        ediMateria.setText("EDITA");
+        ediMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                ediMateriaActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem3);
+        jMenu2.add(ediMateria);
 
-        jMenuItem4.setText("ELIMINAR");
-        jMenu2.add(jMenuItem4);
+        eliminarMateria.setText("ELIMINAR");
+        eliminarMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarMateriaActionPerformed(evt);
+            }
+        });
+        jMenu2.add(eliminarMateria);
 
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("CURSO");
         jMenu3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jMenuItem5.setText("INGRESAR");
-        jMenu3.add(jMenuItem5);
+        ingCurso.setText("INGRESAR");
+        ingCurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ingCursoActionPerformed(evt);
+            }
+        });
+        jMenu3.add(ingCurso);
 
         jMenuItem6.setText("ELIMINAR");
         jMenu3.add(jMenuItem6);
@@ -110,8 +136,13 @@ public class Administrador extends JFrame {
         jMenu4.setText("DOCENTE");
         jMenu4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jMenuItem7.setText("INGRESAR");
-        jMenu4.add(jMenuItem7);
+        mstrrDocente.setText("INGRESAR");
+        mstrrDocente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mstrrDocenteActionPerformed(evt);
+            }
+        });
+        jMenu4.add(mstrrDocente);
 
         jMenuItem8.setText("EDITAR");
         jMenu4.add(jMenuItem8);
@@ -124,8 +155,13 @@ public class Administrador extends JFrame {
         jMenu5.setText("ESTUDIANTE");
         jMenu5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jMenuItem10.setText("INGRESAR");
-        jMenu5.add(jMenuItem10);
+        estu.setText("INGRESAR");
+        estu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                estuActionPerformed(evt);
+            }
+        });
+        jMenu5.add(estu);
 
         jMenuItem11.setText("EDITAR");
         jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
@@ -177,6 +213,20 @@ public class Administrador extends JFrame {
 
         jMenu8.setText("SALIR");
         jMenu8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jMenu8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu8ActionPerformed(evt);
+            }
+        });
+
+        jMenuItem3.setText("salir");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem3);
+
         jMenuBar1.add(jMenu8);
 
         setJMenuBar(jMenuBar1);
@@ -185,28 +235,29 @@ public class Administrador extends JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(111, 111, 111)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(289, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(Escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    private void ediMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ediMateriaActionPerformed
+      
+    }//GEN-LAST:event_ediMateriaActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    private void IngmateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngmateriaActionPerformed
+     controlador.mostrarIngmateria();
+    }//GEN-LAST:event_IngmateriaActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
         // TODO add your handling code here:
@@ -219,6 +270,30 @@ public class Administrador extends JFrame {
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void mstrrDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mstrrDocenteActionPerformed
+controlador.mostraringDocente();
+    }//GEN-LAST:event_mstrrDocenteActionPerformed
+
+    private void eliminarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarMateriaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eliminarMateriaActionPerformed
+
+    private void jMenu8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu8ActionPerformed
+
+    }//GEN-LAST:event_jMenu8ActionPerformed
+
+    private void ingCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingCursoActionPerformed
+controlador.mostraringCurso();        // TODO add yor handling code here:
+    }//GEN-LAST:event_ingCursoActionPerformed
+
+    private void estuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estuActionPerformed
+controlador.mostraringEstudiante();       // TODO add your handling code here:
+    }//GEN-LAST:event_estuActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+     System.exit(0);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,6 +331,12 @@ public class Administrador extends JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JPanel Escritorio;
+    private javax.swing.JMenuItem Ingmateria;
+    private javax.swing.JMenuItem ediMateria;
+    private javax.swing.JMenuItem eliminarMateria;
+    private javax.swing.JMenuItem estu;
+    private javax.swing.JMenuItem ingCurso;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -267,7 +348,6 @@ public class Administrador extends JFrame {
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
@@ -275,13 +355,10 @@ public class Administrador extends JFrame {
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem mstrrDocente;
     // End of variables declaration//GEN-END:variables
 }
